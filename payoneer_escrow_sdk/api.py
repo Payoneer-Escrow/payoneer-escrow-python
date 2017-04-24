@@ -1,5 +1,5 @@
 from __future__ import absolute_import
-from authenticator import Authenticator
+from .authenticator import Authenticator
 
 
 class Api:
@@ -35,4 +35,4 @@ class Api:
             subdomain = 'sandbox'
         else:
             subdomain = 'app'
-        return 'https://' + subdomain + '/armorpayments.com'
+        return 'https://' + subdomain + '.armorpayments.com'
