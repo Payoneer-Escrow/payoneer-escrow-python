@@ -45,7 +45,10 @@ class Authenticator:
         Return a timestamp in the ISO 8601 format of 'YYYY-MM-DDTHH:MM:SS-HH:MM'
         """
 
-        return datetime.utcnow().replace(microsecond=0).isoformat() + '-00:00'
+        current_time = datetime.utcnow().replace(microsecond=0).isoformat()
+        if len(current_time) == 19:
+            current_time += '-00:00'
+        return current_time
 
     def _request_signature(self, method, uri, timestamp):
         """
