@@ -11,7 +11,8 @@ class BaseResource:
         Initialize the resource.
 
         Args:
-            host (string): The base_url for our current environment
+            host (string): The base_url specific to the environment used by the
+                Client
             authenticator (Authenticator): Object that generates secure headers
                 for requests
             uri_root (string): The uri_root for this resource; may have been
