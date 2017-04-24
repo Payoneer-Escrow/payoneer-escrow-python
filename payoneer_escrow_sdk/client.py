@@ -2,7 +2,7 @@ from __future__ import absolute_import
 from .authenticator import Authenticator
 
 
-class Api:
+class Client:
 
     def __init__(self, api_key, api_secret, sandbox=False):
         """

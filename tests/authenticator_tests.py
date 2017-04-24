@@ -1,5 +1,6 @@
+from __future__ import absolute_import
 from nose.tools import *
-import payoneer_escrow_sdk
+from payoneer_escrow_sdk.authenticator import Authenticator
 
 
 def setup():
@@ -17,7 +18,8 @@ def test_secure_headers():
     We will test the value of the request signature below, but here we are at
     least verifying that it is the length we expect.
     """
-    auth = payoneer_escrow_sdk.authenticator.Authenticator(
+
+    auth = Authenticator(
         'test_key', 'test_secret')
     method = 'POST'
     uri = '/accounts/5818958914?55811'
@@ -34,7 +36,8 @@ def test__request_signature():
     """
     Confirm that we have reproducable results with _request_signature.
     """
-    auth = payoneer_escrow_sdk.authenticator.Authenticator(
+
+    auth = Authenticator(
         'test_key', 'test_secret')
     method = 'POST'
     uri = '/accounts/5818958914?55811'
@@ -50,7 +53,8 @@ def test__request_signature_variations_do_not_have_same_hash():
     """
     Confirm that we get different results when we vary each of the inputs.
     """
-    auth = payoneer_escrow_sdk.authenticator.Authenticator(
+
+    auth = Authenticator(
         'test_key', 'test_secret')
     method = 'POST'
     uri = '/accounts/5818958914?55811'
@@ -79,7 +83,8 @@ def test__request_signature_method_case_does_not_matter():
     """
     Confirm that the case of the method does not change the result.
     """
-    auth = payoneer_escrow_sdk.authenticator.Authenticator(
+
+    auth = Authenticator(
         'test_key', 'test_secret')
     method = 'POST'
     lowercase_method = 'post'
