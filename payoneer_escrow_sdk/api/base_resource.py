@@ -1,4 +1,4 @@
-class Resource:
+class BaseResource:
     """
     The base resource class for accessing the Payoneer Escrow API.
     """
