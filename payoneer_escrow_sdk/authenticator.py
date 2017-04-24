@@ -60,7 +60,7 @@ class Authenticator:
         method = method.upper()
         # For the authentication process, trim any params off of the URI
         uri = uri.split('?')[0]
-        # Generate the signature
+        # Build the plain-text signature
         signature = "{}:{}:{}:{}".format(self.api_secret, method, uri, timestamp)
         # Return the sha512 hash represented with only hexidecimal digits
-        return sha512(signature).hexdigest()
+        return sha512(signature.encode('utf-8')).hexdigest()
