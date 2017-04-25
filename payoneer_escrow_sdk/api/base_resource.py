@@ -75,6 +75,9 @@ class BaseResource:
         elif method == 'POST':
             r = requests.post(full_url, params=params, headers=auth_headers)
 
+        # If there was a 4xx or 5xx error, raise an HTTPError
+        r.raise_for_status()
+
         try:
             # If we received a json-encoded response, decode it
             r = r.json()

@@ -1,5 +1,5 @@
-from __future__ import absolute_import
-from nose.tools import *
+from __future__ import (absolute_import, print_function)
+#  from nose.tools import *
 from payoneer_escrow_sdk.client import Client
 from payoneer_escrow_sdk.authenticator import Authenticator
 from payoneer_escrow_sdk.api.base_resource import BaseResource

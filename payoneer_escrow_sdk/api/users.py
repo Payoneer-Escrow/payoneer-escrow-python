@@ -1,4 +1,5 @@
 from .base_resource import BaseResource
+from .authentications import Authentications
 
 
 class Users(BaseResource):
@@ -32,3 +33,14 @@ class Users(BaseResource):
         """
 
         return self._request('POST', self.uri(user_id), data)
+
+    def authentications(self, user_id):
+        """
+        Access the Authentication resource for the specified user.
+
+        The Authentications resource is how you can allow the specified user to
+        take an action in the Payoneer Escrow API, including loading an
+        authenticated light box.
+        """
+
+        return Authentications(self.host, self.authenticator, self.uri(user_id))
