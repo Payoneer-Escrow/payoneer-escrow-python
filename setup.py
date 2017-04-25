@@ -10,7 +10,7 @@ config = {
     'download_url': 'Where to download it.',
     'author_email': 'adamha@payoneer.com',
     'version': '0.1',
-    'install_requires': ['nose'],
+    'install_requires': ['nose', 'requests'],
     'packages': ['payoneer_escrow_sdk', 'payoneer_escrow_sdk.api'],
     'scripts': [],
     'name': 'Payoneer Escrow SDK'

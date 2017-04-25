@@ -15,7 +15,7 @@ def teardown():
 
 def test_uri_empty_object():
     """
-    Ensure we are creating the uri correctly without an object.
+    Ensure we are creating the URI correctly without an object.
     """
 
     client = Client('key', 'secret', True)
@@ -27,7 +27,7 @@ def test_uri_empty_object():
 
 def test_uri_with_object():
     """
-    Ensure we are creating the uri correctly with an object.
+    Ensure we are creating the URI correctly with an object.
     """
 
     client = Client('key', 'secret', True)
