@@ -1,5 +1,6 @@
 from __future__ import absolute_import
 from .authenticator import Authenticator
+from .api.accounts import Accounts
 
 
 class Client:
@@ -23,8 +24,7 @@ class Client:
         Access to the accounts associated with your API key.
         """
 
-        #  return Accounts(self._base_url(), self.authenticator)
-        pass
+        return Accounts(self._base_url(), self.authenticator, '')
 
     def _base_url(self):
         """
