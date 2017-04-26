@@ -4,6 +4,7 @@ from .documents import Documents
 from .milestones import Milestones
 from .notes import Notes
 from .order_events import OrderEvents
+from .order_ledgers import OrderLedgers
 from .payment_instructions import PaymentInstructions
 
 
@@ -88,6 +89,16 @@ class Orders(BaseResource):
         """
 
         return OrderEvents(self.host, self.authenticator, self.uri(order_id))
+
+    def order_ledgers(self, order_id):
+        """
+        Access order ledgers on the specified order.
+
+        Args:
+            order_id (int): The order_id of the order in question
+        """
+
+        return OrderLedgers(self.host, self.authenticator, self.uri(order_id))
 
     def payment_instructions(self, order_id):
         """
