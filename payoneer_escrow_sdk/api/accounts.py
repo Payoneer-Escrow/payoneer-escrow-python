@@ -1,4 +1,6 @@
+from .bank_accounts import BankAccounts
 from .base_resource import BaseResource
+from .orders import Orders
 from .users import Users
 
 
@@ -34,9 +36,23 @@ class Accounts(BaseResource):
 
         return self._request('POST', self.uri(account_id), data)
 
+    def bank_accounts(self, account_id):
+        """
+        Access bank accounts on the specified account.
+        """
+
+        return BankAccounts(self.host, self.authenticator, self.uri(account_id))
+
+    def orders(self, account_id):
+        """
+        Add or access orders on the specified account.
+        """
+
+        return Orders(self.host, self.authenticator, self.uri(account_id))
+
     def users(self, account_id):
         """
-        Access to the users associated with the chained account.
+        Add or access users on the specified account.
         """
 
         return Users(self.host, self.authenticator, self.uri(account_id))
