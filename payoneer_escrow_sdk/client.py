@@ -1,6 +1,7 @@
 from __future__ import absolute_import
 from .authenticator import Authenticator
 from .api.accounts import Accounts
+from .api.shipment_carriers import ShipmentCarriers
 
 
 class Client:
@@ -25,6 +26,13 @@ class Client:
         """
 
         return Accounts(self._base_url(), self.authenticator, '')
+
+    def shipment_carriers(self):
+        """
+        Access to the shipment carriers resource.
+        """
+
+        return ShipmentCarriers(self._base_url(), self.authenticator, '')
 
     def _base_url(self):
         """
