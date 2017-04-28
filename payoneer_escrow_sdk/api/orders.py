@@ -27,22 +27,9 @@ class Orders(BaseResource):
 
         return self._request('POST', self.uri(), data)
 
-    def update(self, order_id, data):
-        """
-        Update the specified order with the supplied (full) data.
-
-        Args:
-            order_id (int): The order_id of the order in question
-            data (dict): The full order parameters
-        Return:
-            The order object
-        """
-
-        return self._request('POST', self.uri(order_id), data)
-
     def disputes(self, order_id):
         """
-        Access disputes on the specified order.
+        Add or access disputes on the specified order.
 
         Args:
             order_id (int): The order_id of the order in question
