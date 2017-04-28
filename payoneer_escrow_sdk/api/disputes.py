@@ -11,6 +11,18 @@ class Disputes(BaseResource):
 
     RESOURCE_NAME = 'disputes'
 
+    def create(self, data):
+        """
+        Create a new dispute with the supplied data.
+
+        Args:
+            data (dict): The dispute creation parameters
+        Return:
+            The dispute object
+        """
+
+        return self._request('POST', self.uri(), data)
+
     def documents(self, dispute_id):
         """
         Add or access documents on the specified dispute.
