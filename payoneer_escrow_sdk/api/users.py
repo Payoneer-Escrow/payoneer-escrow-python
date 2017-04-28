@@ -38,9 +38,8 @@ class Users(BaseResource):
         """
         Access the Authentication resource for the specified user.
 
-        The Authentications resource is how you can allow the specified user to
-        take an action in the Payoneer Escrow API, including loading an
-        authenticated light box.
+        The Authentications resource is used to retrieve an authenticated URL to
+        display to your user in a lightbox.
         """
 
         return Authentications(self.host, self.authenticator, self.uri(user_id))
