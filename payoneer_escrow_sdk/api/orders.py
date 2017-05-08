@@ -6,6 +6,7 @@ from .notes import Notes
 from .order_events import OrderEvents
 from .order_ledgers import OrderLedgers
 from .payment_instructions import PaymentInstructions
+from .shipments import Shipments
 
 
 class Orders(BaseResource):
@@ -118,4 +119,4 @@ class Orders(BaseResource):
             order_id (int): The order_id of the order in question
         """
 
-        return PaymentInstructions(self.host, self.authenticator, self.uri(order_id))
+        return Shipments(self.host, self.authenticator, self.uri(order_id))
