@@ -71,9 +71,9 @@ class BaseResource:
         auth_headers = self.authenticator.secure_headers(method, uri)
         method = method.upper()
         if method == 'GET':
-            r = requests.get(full_url, params=params, headers=auth_headers)
+            r = requests.get(full_url, json=params, headers=auth_headers)
         elif method == 'POST':
-            r = requests.post(full_url, params=params, headers=auth_headers)
+            r = requests.post(full_url, json=params, headers=auth_headers)
 
         # If there was a 4xx or 5xx error, raise an HTTPError
         r.raise_for_status()
