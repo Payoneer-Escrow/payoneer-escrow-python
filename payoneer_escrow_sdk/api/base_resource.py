@@ -75,14 +75,19 @@ class BaseResource:
         elif method == 'POST':
             r = requests.post(full_url, json=params, headers=auth_headers)
 
-        # If there was a 4xx or 5xx error, raise an HTTPError
-        r.raise_for_status()
-
         try:
             # If we received a json-encoded response, decode it
-            r = r.json()
+            r_decoded = r.json()
         except ValueError:
             # Otherwise, just return the text
-            r = r.text
+            r_decoded = r.text
 
-        return r
+        # If there was a 4xx or 5xx error, raise an HTTPError that includes the
+        # status code and extended error message.
+        if 400 <= r.status_code < 600:
+            raise requests.HTTPError({
+                'status_code': r.status_code,
+                'response': r_decoded,
+                })
+
+        return r_decoded
