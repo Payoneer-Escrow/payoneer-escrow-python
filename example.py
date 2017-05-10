@@ -82,4 +82,6 @@ try:
 except HTTPError as e:
     # We are printing here, but you will probably need to do some special
     # handling
-    pretty_print(e.message)
+    print("Status code: {}, Reason: {}".format(
+        e.response.status_code, e.response.reason))
+    pretty_print(e.response.json())
