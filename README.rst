@@ -7,6 +7,13 @@ This is intended to be a clean, idiomatic client for the `Payoneer Escrow API <h
 Installation
 ------------
 
+You can install using pip_ or from source_.
+
+.. _pip:
+
+pip
+~~~
+
 Installation via pip is as easy as any other Python package.
 
 .. code-block:: sh
@@ -18,12 +25,31 @@ Installation via pip is as easy as any other Python package.
 
     $ pip install -r requirements.txt
 
-Quickstart
-----------
+.. _source:
+
+Source
+~~~~~~
+
+Download the payoneer-escrow-python source:
 
 .. code-block:: sh
 
-    $ pip install payoneer_escrow_sdk
+    $ git clone https://github.com/Payoneer-Escrow/payoneer-escrow-python
+
+    $ cd payoneer-escrow-python
+
+    # Install the package in editable mode
+    $ pip install -e .
+
+Quickstart
+----------
+
+This project's GitHub repo contains example files to help you get going. To avoid any potential risk, these files are not included in the package installed via ``pip``. ``example.py`` is recommended for all who are new to this SDK—it allows you to confirm your api credentials and shows example handling of an ``HTTPError`` encountered by a bad request. There is also an end-to-end goods milestone order  in the ``examples/`` directory to demonstrate use of the API with one of the more complicated order types.
+
+.. code-block:: sh
+
+    # If you installed via pip, you will need to get the example file
+    $ curl https://raw.githubusercontent.com/Payoneer-Escrow/payoneer-escrow-python/master/example.py > example.py
 
     # Replace the key and secret values with your own credentials
     $ echo 'PAYONEER_ESCROW_API_KEY = "ENTER_YOUR_API_KEY_HERE"
@@ -40,8 +66,8 @@ The Payoneer Escrow API is REST-ish and nested, so the client relies on chaining
 
     from payoneer_escrow_sdk.client import Client
 
-    # should_use_sandbox is a boolean passed to Client, indicating which Payoneer
-    # Escrow environment should be used; default is Production.
+    # `should_use_sandbox` is a boolean passed to Client, indicating which
+    # Payoneer Escrow environment should be used; default is Production.
 
     client = Client('your-key', 'your-secret', should_use_sandbox)
 
