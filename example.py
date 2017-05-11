@@ -75,8 +75,8 @@ pretty_print(user)
 #
 # If the status code of the response is >= 400, it will raise an HTTPError. You
 # will want to wrap your calls in a try/catch block to properly handle these.
-# Payoneer Escrow returns detailed error messages, so if you have a call that is
-# failing, these can provide insight.
+# The Payoneer Escrow API returns detailed error messages, so if you have a call
+# that is failing, these can provide insight.
 try:
     client.accounts().get('test_catching_an_error')
 except HTTPError as e:

@@ -1,0 +1,8 @@
+# Include the license file
+include LICENSE.txt
+
+# Include the api-credential-testing example file
+include example.py
+
+# Include the example files
+recursive-include examples *
