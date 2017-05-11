@@ -2,13 +2,7 @@ from __future__ import (absolute_import, print_function)
 from json import dumps
 from uuid import uuid4
 # Import the Client class
-try:
-    from payoneer_escrow_sdk.client import Client
-except ImportError:
-    import sys
-    import os.path
-    sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-    from payoneer_escrow_sdk.client import Client
+from payoneer_escrow_sdk.client import Client
 
 
 # This example file will create two new accounts - a buyer and a seller. It will
@@ -38,17 +32,9 @@ except ImportError:
 # PAYONEER_ESCROW_API_KEY = "ENTER_YOUR_API_KEY_HERE"
 # PAYONEER_ESCROW_SECRET = "ENTER_YOUR_API_SECRET_HERE"
 #
-try:
-    from api_credentials import (
-        PAYONEER_ESCROW_API_KEY as pe_api_key,
-        PAYONEER_ESCROW_SECRET as pe_secret)
-except ImportError:
-    import sys
-    import os.path
-    sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-    from api_credentials import (
-        PAYONEER_ESCROW_API_KEY as pe_api_key,
-        PAYONEER_ESCROW_SECRET as pe_secret)
+from api_credentials import (
+    PAYONEER_ESCROW_API_KEY as pe_api_key,
+    PAYONEER_ESCROW_SECRET as pe_secret)
 
 
 # Instantiate a new API client, and set the Sandbox environment flag to TRUE
