@@ -7,13 +7,6 @@ This is intended to be a clean, idiomatic client for the `Payoneer Escrow API <h
 Installation
 ------------
 
-You can install using pip_ or from source_.
-
-.. _pip:
-
-pip
-~~~
-
 Installation via pip is as easy as any other Python package.
 
 .. code-block:: sh
@@ -25,25 +18,12 @@ Installation via pip is as easy as any other Python package.
 
     $ pip install -r requirements.txt
 
-.. _source:
-
-Source
-~~~~~~
-
-Download the payoneer-escrow-python source:
-
-.. code-block:: sh
-
-    $ git clone https://github.com/Payoneer-Escrow/payoneer-escrow-python
-
 Quickstart
 ----------
 
 .. code-block:: sh
 
     $ pip install payoneer_escrow_sdk
-
-    $ curl https://raw.githubusercontent.com/Payoneer-Escrow/payoneer-escrow-python/master/example.py > example.py
 
     # Replace the key and secret values with your own credentials
     $ echo 'PAYONEER_ESCROW_API_KEY = "ENTER_YOUR_API_KEY_HERE"
