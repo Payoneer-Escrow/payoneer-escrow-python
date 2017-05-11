@@ -16,7 +16,7 @@ def read(*parts):
 long_description = read('README.rst')
 
 config = {
-    'name': 'Payoneer Escrow SDK',
+    'name': 'payoneer-escrow-sdk',
     'version': '0.1.0',
     'description': 'An SDK for working with the Payoneer Escrow API',
     'long_description': long_description,

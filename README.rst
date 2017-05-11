@@ -38,8 +38,8 @@ Download the payoneer-escrow-python source:
 
     $ cd payoneer-escrow-python
 
-    # Install the package in editable mode
-    $ pip install -e .
+    # Install the package
+    $ python setup.py install
 
 Quickstart
 ----------
