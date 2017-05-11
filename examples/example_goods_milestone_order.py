@@ -32,9 +32,17 @@ from payoneer_escrow_sdk.client import Client
 # PAYONEER_ESCROW_API_KEY = "ENTER_YOUR_API_KEY_HERE"
 # PAYONEER_ESCROW_SECRET = "ENTER_YOUR_API_SECRET_HERE"
 #
-from api_credentials import (
-    PAYONEER_ESCROW_API_KEY as pe_api_key,
-    PAYONEER_ESCROW_SECRET as pe_secret)
+try:
+    from api_credentials import (
+        PAYONEER_ESCROW_API_KEY as pe_api_key,
+        PAYONEER_ESCROW_SECRET as pe_secret)
+except ImportError:
+    import sys
+    import os.path
+    sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+    from api_credentials import (
+        PAYONEER_ESCROW_API_KEY as pe_api_key,
+        PAYONEER_ESCROW_SECRET as pe_secret)
 
 
 # Instantiate a new API client, and set the Sandbox environment flag to TRUE
