@@ -2,7 +2,10 @@
 Payoneer Escrow
 ===============
 
-This is intended to be a clean, idiomatic client for the `Payoneer Escrow API <https://escrow.payoneer.com/api>`_. This will handle generating the authenticated headers and constructing the properly nested request URI, as well as parsing any response JSON for you.
+This is intended to be a clean, idiomatic client for the `Payoneer Escrow API
+<https://escrow.payoneer.com/api>`_. This will handle generating the
+authenticated headers and constructing the properly nested request URI, as well
+as parsing any response JSON for you.
 
 Installation
 ------------
@@ -44,7 +47,13 @@ Download the payoneer-escrow-python source:
 Quickstart
 ----------
 
-This project's GitHub repo contains example files to help you get going. To avoid any potential risk, these files are not included in the package installed via ``pip``. ``example.py`` is recommended for all who are new to this SDK—it allows you to confirm your api credentials and shows example handling of an ``HTTPError`` encountered by a bad request. There is also an end-to-end goods milestone order  in the ``examples/`` directory to demonstrate use of the API with one of the more complicated order types.
+This project's GitHub repo contains example files to help you get going. To
+avoid any potential risk, these files are not included in the package installed
+via ``pip``. ``example.py`` is recommended for all who are new to this SDK—it
+allows you to confirm your api credentials and shows example handling of an
+``HTTPError`` encountered by a bad request. There is also an end-to-end goods
+milestone order  in the ``examples/`` directory to demonstrate use of the API
+with one of the more complicated order types.
 
 .. code-block:: sh
 
@@ -60,7 +69,9 @@ This project's GitHub repo contains example files to help you get going. To avoi
 Usage
 -----
 
-The Payoneer Escrow API is REST-ish and nested, so the client relies on chaining. We return an object (or array of objects) decoded from the JSON response, if possible.
+The Payoneer Escrow API is REST-ish and nested, so the client relies on
+chaining. We return an object (or array of objects) decoded from the JSON
+response, if possible.
 
 .. code-block:: python
 
@@ -143,7 +154,8 @@ The Payoneer Escrow API is REST-ish and nested, so the client relies on chaining
     client.accounts().orders(account_id).disputes(order_id).offers(
     dispute_id).notes(offer_id).get(note_id)
 
-Some of the resource endpoints support Create/Update `POST` operations, and this client aims to support those as well:
+Some of the resource endpoints support Create/Update `POST` operations, and
+this client aims to support those as well:
 
 .. code-block:: python
 
